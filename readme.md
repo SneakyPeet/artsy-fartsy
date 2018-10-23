@@ -1,8 +1,15 @@
 # Artsy Fartsy Generative Coding
 
-Generative art using quil
+Generative art using [quil](http://quil.info/)
 
-![aliens](/art/lines/alien-scroll.gif?raw=true )
+![aliens](/art/lines/alien-scroll.gif?raw=true)
+
+# Usage
+
+* Jack-in to your clojure repl of choice
+* Browse to the drawing you want to see under `/src/sketch`
+* Evalute the `defsketch` like you would for any quil drawing
+* Modify and re-evaluate any code to change the drawing
 
 # License
 
