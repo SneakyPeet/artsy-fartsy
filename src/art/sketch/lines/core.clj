@@ -1,7 +1,6 @@
 (ns art.sketch.lines.core
   (:require [quil.core :as q]
             [quil.middleware :as m]
-            [quil.middlewares.bind-output :as bind-output]
             [art.utils :as u]))
 
 (defn- line [col-count line-ends i]
