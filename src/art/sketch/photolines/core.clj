@@ -4,7 +4,7 @@
             [art.utils :as u]
             [art.defaults :as d]))
 
-(def id :lumber-dark)
+(def id :lumber-dark3)
 (def save? false)
 
 (def drawings
@@ -18,6 +18,19 @@
     :main-stroke (fn [_] (q/stroke 200 0 100 0.5))
     :loop-n 100
     :rd 0.1
+    :correction 10
+    :grouping :bright
+    :offsetter :bright}
+   :lumber-dark3
+   {:path "resources/lumberjack3.JPG"
+    :width 900 :height 900 :margin 50
+    :lines 40
+    :linepoints 200
+    :background (fn [_] (q/background 360))
+    :canvas-color (fn [_] (q/fill 0))
+    :main-stroke (fn [_] (q/stroke 200 0 100 0.5))
+    :loop-n 100
+    :rd 0.12
     :correction 10
     :grouping :bright
     :offsetter :bright}})
