@@ -4,7 +4,7 @@
             [art.defaults :as d]))
 
 
-  (def image-path "resources/lumberjack.JPG")
+(def image-path "resources/lumberjack.JPG")
 (def width 900)
 (def height 900)
 (def cols 40)
