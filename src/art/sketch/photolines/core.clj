@@ -4,7 +4,7 @@
             [art.utils :as u]
             [art.defaults :as d]))
 
-(def id :lumber-dark3)
+(def id :scarf)
 (def save? false)
 
 (def drawings
@@ -33,6 +33,45 @@
     :rd 0.12
     :correction 10
     :grouping :bright
+    :offsetter :bright}
+   :carms
+   {:path "resources/carms.jpg"
+    :width 900 :height 900 :margin 50
+    :lines 40
+    :linepoints 200
+    :background (fn [_] (q/background 360))
+    :canvas-color (fn [_] (q/fill 0))
+    :main-stroke (fn [_] (q/stroke 200 0 100 0.5))
+    :loop-n 100
+    :rd 0.12
+    :correction 10
+    :grouping :bright
+    :offsetter :bright}
+   :foot
+   {:path "resources/foot.JPG"
+    :width 900 :height 900 :margin 50
+    :lines 40
+    :linepoints 200
+    :background (fn [_] (q/background 360))
+    :canvas-color (fn [_] (q/fill 0))
+    :main-stroke (fn [_] (q/stroke 200 0 100 0.5))
+    :loop-n 100
+    :rd 0.12
+    :correction 10
+    :grouping :bright
+    :offsetter :bright}
+   :scarf
+   {:path "resources/scarf.JPG"
+    :width 900 :height 900 :margin 50
+    :lines 40
+    :linepoints 200
+    :background (fn [_] (q/background 0))
+    :canvas-color (fn [_] (q/fill 0))
+    :main-stroke (fn [_] (q/stroke 200 0 100 0.5))
+    :loop-n 100
+    :rd 0.12
+    :correction 10
+    :grouping :bright
     :offsetter :bright}})
 
 
@@ -48,7 +87,7 @@
   (q/color-mode :hsb 360 100 100 1.0)
   (f :background conf)
 
-  (let [{:keys [path lines linepoints grouping margin width height correction]} conf
+  (let [{:keys [path lines linepoints grouping margin width height correction loop-n]} conf
         img (q/load-image path)
         base-pixels (u/derive-pixels linepoints lines img)
         offset (->> base-pixels
@@ -60,7 +99,7 @@
     (q/rect (+ margin correction) margin
             ($= width - (margin * 2) - correction) ($= height - (margin * 2) - correction))
     (q/no-fill)
-    {:i 100 :p base-pixels :offset offset}))
+    {:i loop-n :p base-pixels :offset offset}))
 
 
 (defn draw
